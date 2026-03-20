@@ -2,24 +2,60 @@
 
 This is a simple application which plays Video and Audio using PyQt5 in python.
 
-## Code 
+### Setup the Environment in your system
 
-### Install Virtualenv 
+- Install Python
+
+This project is written in Python and uses PyQt5 for GUI. So, you need to install Python first. This project is tested on Python 3.12.13.
+
+- Clone the repository
+
+```bash
+mkdir -p ~/Dev/video-player
+cd ~/Dev/video-player
+git clone https://github.com/arvind-4/video-player-in-pyqt5.git .
 ```
-pip install virtualenv
-cd /path/to/folder
-mkdir video_plater
-cd video_plater
-virtualenv .
+
+- Setup the virtual environment
+
+You can use virtual environment to create a separate environment for this project. This will help you to keep your project dependencies separate from your system dependencies.
+
+```bash
+uv venv --python=python3.12
 ```
-### Activate the Virtualenv
+
+- Sync the dependencies
+
+After setting up the virtual environment, you can sync the dependencies using the following command.
+
+```bash
+uv sync
 ```
-source scripts/activate
+
+- Run the application
+
+To run the application, you can use the following command.
+
+```bash
+uv run python src/main.py
 ```
-### Install Dependencies & Run the Code
+
+### Run the tests
+
+To run the tests, you can use the following command.
+
+```bash
+uv run pytest tests/
 ```
-mkdir src && cd src
-git clone https://github.com/Arvind-4/Video-Player-Using-PyQt5.git .
-pip install -r requirements.txt
-python main.py
+
+### Run the code quality checks
+
+To run the code quality checks, you can use the following command.
+
+```bash
+uv run ruff check .
+uv run ruff format --check .
+uv run bandit -r ./src
+uv run pip-audit -l
+uv run yamllint --strict ./.github/workflows
 ```
