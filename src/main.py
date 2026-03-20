@@ -55,29 +55,29 @@ class VideoPlayer(QMainWindow):
     def _setup_menu(self) -> None:
         """Set the menu of the application."""
         file_menu = self.menuBar().addMenu("&File")
-        open_action = QAction(QIcon(str(ROOT / "images/open.png")), "Open...", self)
+        open_action = QAction(QIcon(str(ROOT / "public/open.png")), "Open...", self)
         open_action.setShortcut(QKeySequence.Open)
         open_action.triggered.connect(self.open_file)
         file_menu.addAction(open_action)
 
         file_menu.addSeparator()
 
-        quit_action = QAction(QIcon(str(ROOT / "images/close.png")), "Quit...", self)
+        quit_action = QAction(QIcon(str(ROOT / "public/close.png")), "Quit...", self)
         quit_action.setShortcut(QKeySequence.Close)
         quit_action.triggered.connect(self.quit_function)
         file_menu.addAction(quit_action)
 
         pref_menu = self.menuBar().addMenu("&Preference")
 
-        play_action = QAction(QIcon(str(ROOT / "images/play.png")), "Play", self)
+        play_action = QAction(QIcon(str(ROOT / "public/play.png")), "Play", self)
         play_action.triggered.connect(self.play_video)
         pref_menu.addAction(play_action)
 
-        pause_action = QAction(QIcon(str(ROOT / "images/pause.png")), "Pause", self)
+        pause_action = QAction(QIcon(str(ROOT / "public/pause.png")), "Pause", self)
         pause_action.triggered.connect(self.media_player.pause)
         pref_menu.addAction(pause_action)
 
-        stop_action = QAction(QIcon(str(ROOT / "images/stop.png")), "Stop", self)
+        stop_action = QAction(QIcon(str(ROOT / "public/stop.png")), "Stop", self)
         stop_action.triggered.connect(self.media_player.stop)
         pref_menu.addAction(stop_action)
 
@@ -219,7 +219,7 @@ class VideoPlayer(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setApplicationName("Media Player --Arvind")
-    app.setWindowIcon(QIcon(str(ROOT / "images/icon.png")))
+    app.setWindowIcon(QIcon(str(ROOT / "public/icon.png")))
     app.setStyle("Fusion")
 
     palette = QPalette()
