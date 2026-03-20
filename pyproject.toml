@@ -1,0 +1,18 @@
+[project]
+name = "video-player"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pyqt5==5.15.10",
+]
+
+[dependency-groups]
+dev = [
+    "bandit[toml]==1.8.6",
+    "pip-audit==2.9.0",
+    "pytest==8.4.1",
+    "ruff==0.12.9",
+    "yamllint>=1.38.0",
+]
